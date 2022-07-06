@@ -1,0 +1,63 @@
+/* stylelint-disable length-zero-no-unit */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.to-do-wrap {
+  margin: 10rem auto 0 auto;
+  width: 60%;
+  box-shadow: 0px 0px 28px -3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 28px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 28px -3px rgba(0,0,0,0.75);
+}
+
+.title-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.fa-rotate {
+  margin: 2%;
+  transition: all 0.3s;
+}
+
+.fa-rotate.active {
+  transform: rotate(180deg);
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  background-color: white;
+}
+
+input {
+  font-style: italic;
+  height: 40px;
+  border-style: none;
+  margin-left: 1rem;
+}
+
+.fa-circle-plus {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.dynamic-elements {
+
+}
+
+.clr-btn > button {
+  border-style: solid none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  border-bottom: 0;
+  height: 4rem;
+  border-width: 1px;
+  background-color: #f3ede2;
+}
