@@ -2,8 +2,6 @@
 import _ from 'lodash';
 import './style.css';
 
-console.log('123456');
-
 const toDoList = [
   {
     description: 'Wash the Dishes',
