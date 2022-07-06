@@ -47,8 +47,13 @@ input {
   justify-items: center;
 }
 
-.dynamic-elements {
+.dynamic-Elements {
+  display: flex;
+  gap: 50px;
+}
 
+.dynamic-Elements > p {
+  padding-top: 10px;
 }
 
 .clr-btn > button {
@@ -59,5 +64,5 @@ input {
   border-bottom: 0;
   height: 4rem;
   border-width: 1px;
-  background-color: #f3ede2;
+  background-color: #dad7d0;
 }
