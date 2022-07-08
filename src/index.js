@@ -1,48 +1,26 @@
-/* eslint-disable no-unused-vars */
-import _ from 'lodash';
-import './style.css';
+import "./style.css";
+import { getLocalStorage, addToDoTask, deleteToDoTask } from "./addremove.js";
 
-const toDoList = [
-  {
-    description: 'Wash the Dishes',
-    completed: true,
-    index: 0,
-  },
+getLocalStorage();
+const inputTask = document.querySelector(".input-task");
 
-  {
-    description: 'Complete To Do List',
-    completed: false,
-    index: 1,
-  },
+document.querySelector(".add-task").addEventListener("click", () => {
+  if (inputTask.value !== null) {
+    addToDoTask(inputTask.value);
+    inputTask.value = "";
+  }
+});
 
-  {
-    description: 'Coffee And Code',
-    completed: true,
-    index: 2,
-  },
-];
+inputTask.addEventListener("keydown", (evnet) => {
+  if (evnet.key === "Enter") {
+    addTask.click();
+  }
+});
 
-window.addEventListener('load', () => {
-  const List = document.querySelector('.to-do-list');
-
-  const createElement = (e) => {
-    const createdElement = document.createElement('div');
-    const checkBox = document.createElement('input');
-    const task = document.createElement('p');
-    const hr = document.createElement('hr');
-
-    createdElement.classList.add('dynamic-Elements');
-
-    checkBox.type = 'checkbox';
-    checkBox.checked = e.completed;
-
-    task.innerHTML = e.description;
-
-    createdElement.append(checkBox, task);
-    List.append(hr, createdElement);
-  };
-
-  toDoList.forEach((e) => {
-    createElement(e);
-  });
+document.querySelector(".to-do-list").addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-task")) {
+    event.target.parentElement.remove();
+    const iD = parseInt(event.target.parentElement.getAttribute("div_id"), 16);
+    deleteToDoTask(iD);
+  }
 });
