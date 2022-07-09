@@ -3,23 +3,23 @@ const Task = [] || JSON.parse(localStorage.getItem('Task'));
 const TaskList = document.querySelector('.to-do-list');
 
 const createElement = (e) => {
-  const InsertedDiv = document.createElement('div');
-  const InsertedCheckBox = document.createElement('input');
-  const toDoTask = document.createElement('input');
-  const deleteButton = document.createElement('span');
+  const InsertedDiv = document.createElement("div");
+  const InsertedCheckBox = document.createElement("input");
+  const toDoTask = document.createElement("input");
+  const deleteButton = document.createElement("button");
 
-  deleteButton.classList.add('remove-task');
-  deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+  deleteButton.classList.add("remove-task");
+  deleteButton.innerHTML = '<i class=" fa-solid fa-trash-can"></i>';
 
-  InsertedDiv.classList.add('dynamic-Elements');
+  InsertedDiv.classList.add("dynamic-Elements");
 
-  InsertedCheckBox.type = 'checkbox';
+  InsertedCheckBox.type = "checkbox";
   InsertedCheckBox.checked = e.complete;
 
   toDoTask.value = e.description;
-  toDoTask.classList.add('task-layout');
+  toDoTask.classList.add("task-layout");
 
-  InsertedDiv.setAttribute('index_id', e.index);
+  InsertedDiv.setAttribute("index_id", e.index);
   InsertedDiv.append(InsertedCheckBox, toDoTask, deleteButton);
 
   TaskList.appendChild(InsertedDiv);
@@ -32,17 +32,17 @@ const addTask = (Task) => {
 };
 
 const localStorageTasks = (Task) => {
-  window.localStorage.setItem('Task', JSON.stringify(Task));
+  window.localStorage.setItem("Task", JSON.stringify(Task));
 };
 
 const getLocalStorage = () => {
-  const theList = window.localStorage.getItem('Task');
+  const theTask = window.localStorage.getItem("Task");
 
-  if (theList !== null) {
-    addTask(JSON.parse(theList));
+  if (theTask !== null) {
+    addTask(JSON.parse(theTask));
   }
 
-  return theList;
+  return theTask;
 };
 
 const addToDoTask = (value) => {
@@ -58,14 +58,25 @@ const addToDoTask = (value) => {
 };
 
 const deleteToDoTask = (ID) => {
-  const theList = JSON.parse(localStorage.getItem('Task'));
-  theList.splice(ID - 1, 1);
-  theList.forEach((element, index) => {
+  const theTask = JSON.parse(localStorage.getItem("Task"));
+  theTask.splice(ID - 1, 1);
+  theTask.forEach((element, index) => {
     element.index = index + 1;
   });
-  localStorageTasks(theList);
+  localStorageTasks(theTask);
 
-  return theList;
+  return theTask;
 };
 
-export { getLocalStorage, addToDoTask, deleteToDoTask };
+const editToDoTask = (ID, value) => {
+  const theTask = JSON.parse(localStorage.getItem("Task"));
+  theTask.forEach((e) => {
+    if (e.index === ID) {
+      e.description = value;
+      e.completed = value;
+    }
+    localStorageTasks(theTask);
+  });
+};
+
+export { getLocalStorage, addToDoTask, deleteToDoTask, editToDoTask };
