@@ -8,6 +8,7 @@ import {
 
 getLocalStorage();
 const inputTask = document.querySelector('.input-task');
+const toDoList = document.querySelector('.to-do-list');
 
 document.querySelector('.add-task').addEventListener('click', () => {
   if (inputTask.value !== '') {
@@ -22,7 +23,8 @@ inputTask.addEventListener('keydown', (e) => {
   }
 });
 
-document.querySelector('.to-do-list').addEventListener('click', (e) => {
+toDoList.addEventListener('click', (e) => {
+  e.preventDefault();
   if (e.target.classList.contains('remove-task')) {
     e.target.parentElement.remove();
     const iD = parseInt(e.target.parentElement.getAttribute('index_id'), 10);
@@ -30,7 +32,7 @@ document.querySelector('.to-do-list').addEventListener('click', (e) => {
   }
 });
 
-document.querySelector('to-do-list').addEventListener('click', (e) => {
+toDoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('task-layout')) {
     const iD = parseInt(e.target.parentElement.getAttribute('index_id'), 10);
     const { value } = e.target;
@@ -38,7 +40,7 @@ document.querySelector('to-do-list').addEventListener('click', (e) => {
   }
 });
 
-document.querySelector('to-do-list').addEventListener('keydown', (e) => {
+toDoList.addEventListener('keydown', (e) => {
   if (e.target.classList.contains('task-layout')) {
     const iD = parseInt(e.target.parentElement.getAttribute('index_id'), 10);
     const { value } = e.target;
