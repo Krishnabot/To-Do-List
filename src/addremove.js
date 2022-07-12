@@ -73,7 +73,6 @@ const editToDoTask = (ID, value) => {
   theTask.forEach((e) => {
     if (e.index === ID) {
       e.description = value;
-      e.complete = true;
     }
     setLocalStorage(theTask);
   });

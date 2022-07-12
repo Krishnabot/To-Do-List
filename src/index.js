@@ -6,7 +6,6 @@ import {
   editToDoTask,
 } from './addremove.js';
 
-getLocalStorage();
 const inputTask = document.querySelector('.input-task');
 const toDoList = document.querySelector('.to-do-list');
 
@@ -31,6 +30,7 @@ toDoList.addEventListener('click', (e) => {
     deleteToDoTask(iD);
   }
 });
+getLocalStorage();
 
 toDoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('task-layout')) {
