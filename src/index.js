@@ -6,8 +6,6 @@ import {
   editToDoTask,
 } from './addremove.js';
 
-getLocalStorage();
-
 const inputTask = document.querySelector('.input-task');
 const toDoList = document.querySelector('.to-do-list');
 
@@ -27,7 +25,10 @@ inputTask.addEventListener('keydown', (event) => {
 toDoList.addEventListener('click', (event) => {
   if (event.target.classList.contains('remove-task')) {
     event.target.parentElement.remove();
-    const iD = parseInt(event.target.parentElement.getAttribute('index_id'), 10);
+    const iD = parseInt(
+      event.target.parentElement.getAttribute('index_id'),
+      10,
+    );
     deleteToDoTask(iD);
   }
 });
@@ -47,3 +48,4 @@ toDoList.addEventListener('keydown', (e) => {
     editToDoTask(iD, value);
   }
 });
+getLocalStorage();

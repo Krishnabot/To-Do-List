@@ -49,6 +49,7 @@ input {
 .dynamic-Elements {
   display: flex;
   gap: 50px;
+  padding-top: 10px;
 }
 
 .dynamic-Elements > p {
