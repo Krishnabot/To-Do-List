@@ -2,7 +2,7 @@ const Task = [] || JSON.parse(localStorage.getItem('Task'));
 
 const TaskList = document.querySelector('.to-do-list');
 
-const createElement = (e) => {
+const createElement = (element) => {
   const InsertedDiv = document.createElement('div');
   const InsertedCheckBox = document.createElement('input');
   const toDoTask = document.createElement('input');
@@ -14,12 +14,12 @@ const createElement = (e) => {
   InsertedDiv.classList.add('dynamic-Elements');
 
   InsertedCheckBox.type = 'checkbox';
-  InsertedCheckBox.checked = e.complete;
+  InsertedCheckBox.checked = element.complete;
 
-  toDoTask.value = e.description;
+  toDoTask.value = element.description;
   toDoTask.classList.add('task-layout');
 
-  InsertedDiv.setAttribute('index_id', e.index);
+  InsertedDiv.setAttribute('index_id', element.index);
   InsertedDiv.append(InsertedCheckBox, toDoTask, deleteButton);
 
   TaskList.appendChild(InsertedDiv);
@@ -70,9 +70,9 @@ const deleteToDoTask = (ID) => {
 
 const editToDoTask = (ID, value) => {
   const theTask = JSON.parse(localStorage.getItem('Task'));
-  theTask.forEach((e) => {
-    if (e.index === ID) {
-      e.description = value;
+  theTask.forEach((element) => {
+    if (element.index === ID) {
+      element.description = value;
     }
     setLocalStorage(theTask);
   });

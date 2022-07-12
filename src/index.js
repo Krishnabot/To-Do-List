@@ -6,6 +6,8 @@ import {
   editToDoTask,
 } from './addremove.js';
 
+getLocalStorage();
+
 const inputTask = document.querySelector('.input-task');
 const toDoList = document.querySelector('.to-do-list');
 
@@ -16,21 +18,19 @@ document.querySelector('.add-task').addEventListener('click', () => {
   }
 });
 
-inputTask.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
+inputTask.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
     document.querySelector('.add-task').click();
   }
 });
 
-toDoList.addEventListener('click', (e) => {
-  e.preventDefault();
-  if (e.target.classList.contains('remove-task')) {
-    e.target.parentElement.remove();
-    const iD = parseInt(e.target.parentElement.getAttribute('index_id'), 10);
+toDoList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('remove-task')) {
+    event.target.parentElement.remove();
+    const iD = parseInt(event.target.parentElement.getAttribute('index_id'), 10);
     deleteToDoTask(iD);
   }
 });
-getLocalStorage();
 
 toDoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('task-layout')) {
