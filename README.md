@@ -6,11 +6,14 @@
 - index.html is created  and all  HTML markup  was written there.
 - An empty To Do List placeholder was created.
 - The index.html file is  set as a template using the HTML Webpack Plugin.
-- Index.js is created  and set an array of some simple to do tasks. Each task object contain three keys:
-description [string].
-completed [bool].
-index: [number].
-- On page load the dynamically created list of tasks is rendered  in the dedicated placeholder.
+- Removed all hardcoded items from the tasks array.
+- Created a new JavaScript file for the new functionality.
+- Implemented a function for adding a new task. 
+- Implement a function for deleting a task.
+- Implement a function for editing task descriptions.
+- new tasks have the property completed set to false and the property index set to the value of the new array length. 
+- Deleting a task updates all remaining items' indexes, so they represent the current list order and are unique. 
+- All changes to the To-Do List should be saved in local storage.
 ## Built With
 
 - Html
@@ -24,6 +27,9 @@ index: [number].
 ## Getting Started 
 
 - Use `git clone https://github.com/Krishnabot/To-Do-List.git.git` to clone this repo in your Local machine.
+- In terminal  run `npm run build ` and then `npm start`.
+- The Application open in New default browser window automatically.
+- Manually can be accessed in `http://localhost:8081/`.
 
 ## Author
 

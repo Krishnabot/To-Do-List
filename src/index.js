@@ -1,48 +1,54 @@
-/* eslint-disable no-unused-vars */
-import _ from 'lodash';
+/* eslint-disable no-restricted-globals */
 import './style.css';
+import {
+  getLocalStorage,
+  addToDoTask,
+  deleteToDoTask,
+  editToDoTask,
+} from './addremove.js';
 
-const toDoList = [
-  {
-    description: 'Wash the Dishes',
-    completed: true,
-    index: 0,
-  },
+getLocalStorage();
 
-  {
-    description: 'Complete To Do List',
-    completed: false,
-    index: 1,
-  },
+const inputTask = document.querySelector('.input-task');
+const toDoList = document.querySelector('.to-do-list');
 
-  {
-    description: 'Coffee And Code',
-    completed: true,
-    index: 2,
-  },
-];
+document.querySelector('.add-task').addEventListener('click', () => {
+  if (inputTask.value !== '') {
+    addToDoTask(inputTask.value);
+    inputTask.value = '';
+  }
+});
 
-window.addEventListener('load', () => {
-  const List = document.querySelector('.to-do-list');
+inputTask.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    document.querySelector('.add-task').click();
+  }
+});
 
-  const createElement = (e) => {
-    const createdElement = document.createElement('div');
-    const checkBox = document.createElement('input');
-    const task = document.createElement('p');
-    const hr = document.createElement('hr');
+toDoList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('remove-task')) {
+    event.target.parentElement.remove();
+    const iD = parseInt(
+      event.target.parentElement.getAttribute('index_id'),
+      10,
+    );
+    deleteToDoTask(iD);
+    location.reload();
+  }
+});
 
-    createdElement.classList.add('dynamic-Elements');
+toDoList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('task-layout')) {
+    const iD = parseInt(e.target.parentElement.getAttribute('index_id'), 10);
+    const { value } = e.target;
+    editToDoTask(iD, value);
+  }
+});
 
-    checkBox.type = 'checkbox';
-    checkBox.checked = e.completed;
-
-    task.innerHTML = e.description;
-
-    createdElement.append(checkBox, task);
-    List.append(hr, createdElement);
-  };
-
-  toDoList.forEach((e) => {
-    createElement(e);
-  });
+toDoList.addEventListener('keydown', (e) => {
+  if (e.target.classList.contains('task-layout')) {
+    const iD = parseInt(e.target.parentElement.getAttribute('index_id'), 10);
+    const { value } = e.target;
+    editToDoTask(iD, value);
+  }
 });
