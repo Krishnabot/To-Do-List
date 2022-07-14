@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import './style.css';
 import {
   getLocalStorage,
@@ -5,6 +6,8 @@ import {
   deleteToDoTask,
   editToDoTask,
 } from './addremove.js';
+
+getLocalStorage();
 
 const inputTask = document.querySelector('.input-task');
 const toDoList = document.querySelector('.to-do-list');
@@ -30,6 +33,7 @@ toDoList.addEventListener('click', (event) => {
       10,
     );
     deleteToDoTask(iD);
+    location.reload();
   }
 });
 
@@ -48,4 +52,3 @@ toDoList.addEventListener('keydown', (e) => {
     editToDoTask(iD, value);
   }
 });
-getLocalStorage();

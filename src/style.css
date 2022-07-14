@@ -39,11 +39,18 @@ input {
   border-style: none;
   margin-left: 1rem;
 }
-
+.input-task {
+  padding-left: 1rem;
+}
 .fa-circle-plus {
   display: flex;
   justify-content: center;
   justify-items: center;
+}
+
+.to-do-list {
+  margin: auto;
+  width: 50%;
 }
 
 .dynamic-Elements {

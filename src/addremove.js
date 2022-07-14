@@ -1,9 +1,8 @@
-const Task = [] || JSON.parse(localStorage.getItem('Task'));
-
-const TaskList = document.querySelector('.to-do-list');
+const Task = JSON.parse(localStorage.getItem('Task')) || [];
 
 const createElement = (element) => {
   const InsertedDiv = document.createElement('div');
+  const TaskList = document.querySelector('.to-do-list');
   const InsertedCheckBox = document.createElement('input');
   const toDoTask = document.createElement('input');
   const deleteButton = document.createElement('button');
