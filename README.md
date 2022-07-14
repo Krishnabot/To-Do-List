@@ -14,6 +14,11 @@
 - new tasks have the property completed set to false and the property index set to the value of the new array length. 
 - Deleting a task updates all remaining items' indexes, so they represent the current list order and are unique. 
 - All changes to the To-Do List should be saved in local storage.
+- it contains methods related to the status updates (completed: true / false).
+- An event listener is added  to the checkbox.
+- Items object's value for completed key is updated upon user actions.
+- Function for the "Clear all completed" button is implemented using filter() method.
+- The he updated array of items is stored  in local storage, so the user gets the correct list values after the page reloads.
 ## Built With
 
 - Html
