@@ -19,6 +19,7 @@ document.querySelector('.add-task').addEventListener('click', () => {
     addToDoTask(inputTask.value);
     inputTask.value = '';
   }
+  window.location.reload();
 });
 
 inputTask.addEventListener('keydown', (event) => {
