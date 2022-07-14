@@ -13,24 +13,17 @@
 
 .title-wrap {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
-}
-
-.fa-rotate {
-  margin: 2%;
-  transition: all 0.3s;
-}
-
-.fa-rotate.active {
-  transform: rotate(180deg);
+  text-align: center;
 }
 
 .input {
   display: grid;
   grid-template-columns: 11fr 1fr;
   background-color: white;
+  width: 70%;
+  margin: auto;
 }
 
 input {
@@ -38,10 +31,22 @@ input {
   height: 40px;
   border-style: none;
   margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+.active {
+  text-decoration: line-through;
 }
 
 .input-task {
-  padding-left: 1rem;
+  border: 1px solid #dad7d0;
+  border-radius: 5px;
+}
+
+.add-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fa-circle-plus {
@@ -70,10 +75,21 @@ input {
   cursor: pointer;
   width: 100%;
   text-align: center;
+  border-radius: 10px;
   border-bottom: 0;
   height: 4rem;
+  font-size: 20px;
   border-width: 1px;
-  background-color: #dad7d0;
+  background-color: #0429fc;
+  box-shadow: inset 0 0 0 0;
+  transition: ease-out 0.3s;
+  color: rgb(255, 255, 255);
+}
+
+.clr-btn > button:hover {
+  box-shadow: inset 1400px 0 0 0 #f00;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .task-layout {

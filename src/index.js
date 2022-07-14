@@ -7,6 +7,8 @@ import {
   editToDoTask,
 } from './addremove.js';
 
+import { editCheckBox, clearCompletedTask } from './interactive_list.js';
+
 getLocalStorage();
 
 const inputTask = document.querySelector('.input-task');
@@ -51,4 +53,23 @@ toDoList.addEventListener('keydown', (e) => {
     const { value } = e.target;
     editToDoTask(iD, value);
   }
+});
+
+toDoList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('insertedcheckbox')) {
+    const insertedcheckbox = event.target;
+    const ID = parseInt(
+      event.target.parentElement.getAttribute('index_id'),
+      10,
+    );
+    editCheckBox(ID, insertedcheckbox.checked);
+  }
+});
+
+document.querySelector('.insertedcheckbox').addEventListener('change', () => {
+  document.querySelector('.task-layout').classList.toggle('active');
+});
+
+document.querySelector('.clr-btn').addEventListener('click', () => {
+  clearCompletedTask();
 });
