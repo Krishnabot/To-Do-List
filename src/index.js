@@ -66,9 +66,11 @@ toDoList.addEventListener('click', (event) => {
   }
 });
 
-document.querySelector('.insertedcheckbox').addEventListener('change', () => {
-  document.querySelector('.task-layout').classList.toggle('active');
-});
+document
+  .querySelectorAll(".insertedcheckbox")
+  .addEventListener("change", () => {
+    document.querySelector(".task-layout").classList.toggle("active");
+  });
 
 document.querySelector('.clr-btn').addEventListener('click', () => {
   clearCompletedTask();
