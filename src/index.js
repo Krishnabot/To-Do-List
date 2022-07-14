@@ -67,9 +67,9 @@ toDoList.addEventListener('click', (event) => {
 });
 
 document
-  .querySelectorAll(".insertedcheckbox")
-  .addEventListener("change", () => {
-    document.querySelector(".task-layout").classList.toggle("active");
+  .querySelectorAll('.insertedcheckbox')
+  .addEventListener('change', () => {
+    document.querySelector('.task-layout').classList.toggle('active');
   });
 
 document.querySelector('.clr-btn').addEventListener('click', () => {
