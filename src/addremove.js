@@ -13,6 +13,7 @@ const createElement = (element) => {
   InsertedDiv.classList.add('dynamic-Elements');
 
   InsertedCheckBox.type = 'checkbox';
+  InsertedCheckBox.classList.add('insertedcheckbox');
   InsertedCheckBox.checked = element.complete;
 
   toDoTask.value = element.description;
@@ -78,5 +79,10 @@ const editToDoTask = (ID, value) => {
 };
 
 export {
-  getLocalStorage, addToDoTask, deleteToDoTask, editToDoTask,
+  addTask,
+  getLocalStorage,
+  setLocalStorage,
+  addToDoTask,
+  deleteToDoTask,
+  editToDoTask,
 };
