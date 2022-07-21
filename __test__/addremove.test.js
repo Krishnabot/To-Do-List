@@ -27,3 +27,8 @@ test('Test to remove task from TaskList', () => {
   const TaskList = document.querySelectorAll('.to-do-list div');
   expect(TaskList).toHaveLength(0);
 });
+
+test('Test get Local storage' , () => {
+  const localest = getLocalStorage();
+  expect(localest).not.toHaveLength(0);
+}); 
