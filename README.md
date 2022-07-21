@@ -1,49 +1,45 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To Do List Minimalist App 
+# Testing for Add Remove function in To Do List App 
 
-- New project is set up with webpack.
-- index.html is created  and all  HTML markup  was written there.
-- An empty To Do List placeholder was created.
-- The index.html file is  set as a template using the HTML Webpack Plugin.
-- Removed all hardcoded items from the tasks array.
-- Created a new JavaScript file for the new functionality.
-- Implemented a function for adding a new task. 
-- Implement a function for deleting a task.
-- Implement a function for editing task descriptions.
-- new tasks have the property completed set to false and the property index set to the value of the new array length. 
-- Deleting a task updates all remaining items' indexes, so they represent the current list order and are unique. 
-- All changes to the To-Do List should be saved in local storage.
-- it contains methods related to the status updates (completed: true / false).
-- An event listener is added  to the checkbox.
-- Items object's value for completed key is updated upon user actions.
-- Function for the "Clear all completed" button is implemented using filter() method.
-- The he updated array of items is stored  in local storage, so the user gets the correct list values after the page reloads.
+- Jest framework is used  for testing.
+- Created  (addremove.test.js) for a file containing the add item and delete item functions that you want to test.
+- Tests are written for pure functions. Some of those functions however will update localStorage and manipulate the DOM. For those, mocks are used. 
+- A storage object is mocked  to "imitate" localStorage operations.
+- HTML is mocked  to test if add/delete functions add or remove exactly one  element to/from the list in the DOM.
+- describe() method is used. 
 ## Built With
 
 - Html
 - Css
 - Java script
 
+## Frameworks
+- webpack
+- jest
+
 ## Live Demo 
 
-[Live Demo Link](https://krishnabot.github.io/To-Do-List/)
+[Live Demo Link](https://krishnabot.github.io/To-Do-List/dist/)
 
 ## Getting Started 
 
 - Use `git clone https://github.com/Krishnabot/To-Do-List.git.git` to clone this repo in your Local machine.
-- In terminal  run `npm run build ` and then `npm start`.
-- The Application open in New default browser window automatically.
+- In terminal  run `npm run build ` and then `npm start` to run application. 
 - Manually can be accessed in `http://localhost:8081/`.
+- In terminal run `npm test` to run test. 
 
 ## Author
 
 👤 **Krishna**
 
-- GitHub: [@githubhandle](https://github.com/Krishnabot)
+- GitHub: [@Krishnabot](https://github.com/Krishnabot)
 - Twitter: [@last_matrix](https://twitter.com/last_matrix)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/krishna-prasad-acharya-3596bb130/)
 
+## Collaboration Partner
+
+- GitHub: [@Jeanbulambo](https://github.com/Jeanbulambo)
 
 ## 🤝 Contributing
 
@@ -56,10 +52,6 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-- Read Write Extercise [Youtube](https://youtu.be/3LZOL65sxhU)
-- Hitesh Choudhary [Youtube](https://youtu.be/dQCdwX0p_tc)
-- Dler Ari [FreecodeCamp](https://www.freecodecamp.org/news/how-to-use-es6-modules-and-why-theyre-important-a9b20b480773/)
 
 ## 📝 License
 

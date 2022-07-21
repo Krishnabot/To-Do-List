@@ -31,6 +31,9 @@ const addTask = (Task) => {
   });
 };
 
+const deleteTask = (item) => {
+  item.parentElement.remove();
+};
 const setLocalStorage = (Task) => {
   window.localStorage.setItem('Task', JSON.stringify(Task));
 };
@@ -80,6 +83,7 @@ const editToDoTask = (ID, value) => {
 
 export {
   addTask,
+  deleteTask,
   getLocalStorage,
   setLocalStorage,
   addToDoTask,
