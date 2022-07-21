@@ -28,7 +28,18 @@ test('Test to remove task from TaskList', () => {
   expect(TaskList).toHaveLength(0);
 });
 
-test('Test get Local storage' , () => {
+test('Test get Local storage', () => {
   const localest = getLocalStorage();
   expect(localest).not.toHaveLength(0);
-}); 
+});
+
+test('Test to remove  task from the localStorage', () => {
+  const tasks = [
+    { description: 'task one ', completed: false, index: 1 },
+    { description: 'task two', completed: false, index: 2 },
+    { description: 'task three', completed: false, index: 3 },
+  ];
+  localStorage.setItem('Task', JSON.stringify(tasks));
+  deleteToDoTask(1);
+  expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(2);
+});
