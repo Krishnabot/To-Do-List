@@ -31,12 +31,15 @@ const addTask = (Task) => {
   });
 };
 
+const deleteTask = (item) => {
+  item.parentElement.remove();
+};
 const setLocalStorage = (Task) => {
-  window.localStorage.setItem('Task', JSON.stringify(Task));
+  window.localStorage.setItem("Task", JSON.stringify(Task));
 };
 
 const getLocalStorage = () => {
-  const theTask = window.localStorage.getItem('Task');
+  const theTask = window.localStorage.getItem("Task");
 
   if (theTask !== null) {
     addTask(JSON.parse(theTask));
@@ -58,7 +61,7 @@ const addToDoTask = (value) => {
 };
 
 const deleteToDoTask = (ID) => {
-  const theTask = JSON.parse(localStorage.getItem('Task'));
+  const theTask = JSON.parse(localStorage.getItem("Task"));
   theTask.splice(ID - 1, 1);
   theTask.forEach((element, index) => {
     element.index = index + 1;
@@ -69,7 +72,7 @@ const deleteToDoTask = (ID) => {
 };
 
 const editToDoTask = (ID, value) => {
-  const theTask = JSON.parse(localStorage.getItem('Task'));
+  const theTask = JSON.parse(localStorage.getItem("Task"));
   theTask.forEach((element) => {
     if (element.index === ID) {
       element.description = value;
@@ -80,6 +83,7 @@ const editToDoTask = (ID, value) => {
 
 export {
   addTask,
+  deleteTask,
   getLocalStorage,
   setLocalStorage,
   addToDoTask,
