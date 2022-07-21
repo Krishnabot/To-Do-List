@@ -1,11 +1,8 @@
 import {
-  addTask,
   deleteTask,
   getLocalStorage,
-  setLocalStorage,
   addToDoTask,
   deleteToDoTask,
-  editToDoTask,
 } from '../src/addremove.js';
 
 describe('Add, Remove Task', () => {
