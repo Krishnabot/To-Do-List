@@ -5,6 +5,7 @@ import {
   addToDoTask,
   deleteToDoTask,
   editToDoTask,
+  deleteTask,
 } from './addremove.js';
 
 import { editCheckBox, clearCompletedTask } from './interactive_list.js';
@@ -30,13 +31,13 @@ inputTask.addEventListener('keydown', (event) => {
 
 toDoList.addEventListener('click', (event) => {
   if (event.target.classList.contains('remove-task')) {
-    event.target.parentElement.remove();
+    const item = event.target;
+    deleteTask(item);
     const iD = parseInt(
       event.target.parentElement.getAttribute('index_id'),
       10,
     );
     deleteToDoTask(iD);
-    location.reload();
   }
 });
 

@@ -8,6 +8,11 @@
 - A storage object is mocked  to "imitate" localStorage operations.
 - HTML is mocked  to test if add/delete functions add or remove exactly one  element to/from the list in the DOM.
 - describe() method is used. 
+- function for editing the task description.
+- function for updating an item's 'completed' status.
+- the "Clear all completed" function.
+- group tests using the describe() method.
+
 ## Built With
 
 - Html
