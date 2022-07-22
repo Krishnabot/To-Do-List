@@ -3,6 +3,7 @@ import { setLocalStorage, addTask } from './addremove.js';
 let Task = JSON.parse(localStorage.getItem('Task')) || [];
 
 const editCheckBox = (ID, event) => {
+  Task = JSON.parse(localStorage.getItem('Task')) || [];
   Task.forEach((element) => {
     if (element.index === ID) {
       element.completed = event;
@@ -12,6 +13,7 @@ const editCheckBox = (ID, event) => {
 };
 
 const clearCompletedTask = () => {
+  Task = JSON.parse(localStorage.getItem('Task'));
   Task = Task.filter((element) => element.completed === false);
 
   Task.forEach((element, index) => {
