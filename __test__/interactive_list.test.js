@@ -24,4 +24,25 @@ describe(' Editcheckbok Clear completed Test', () => {
     editCheckBox(ID, anotherEvent);
     expect(JSON.parse(localStorage.getItem('Task'))[1].completed).toBeFalsy();
   });
+test('Test clear complerted function', () => {
+const tasks = [
+{ description: 'Task one', completed: true, index: 1 },
+{ description: 'Task two', completed: false, index: 2 },
+{ description: 'Task three', completed: false, index: 3 },
+];
+
+localStorage.setItem('Task', JSON.stringify(tasks));
+clearCompletedTask();
+expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(2);
+
+const anotherTasks = [
+{ description: 'text', completed: false, index: 1 },
+{ description: 'two', completed: false, index: 2 },
+{ description: 'three', completed: false, index: 3 },
+];
+
+localStorage.setItem('Task', JSON.stringify(anotherTasks));
+clearCompletedTask();
+expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(3);
+}); 
 });
