@@ -1,36 +1,42 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
 }
 
 .to-do-wrap {
-  margin: 10rem auto 0 auto;
-  width: 60%;
-  box-shadow: 0 0 28px -3px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0 0 28px -3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 28px -3px rgba(0, 0, 0, 0.75);
+  margin: 10rem auto;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .title-wrap {
-  display: flex;
-  justify-content: center;
   padding: 1rem;
   text-align: center;
+  background-color: #f2f2f2;
 }
 
 .input {
   display: grid;
-  grid-template-columns: 11fr 1fr;
-  background-color: white;
-  width: 70%;
-  margin: auto;
+  grid-template-columns: 1fr 50px;
+  background-color: #f2f2f2;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 1rem;
 }
 
 input {
   font-style: italic;
   height: 40px;
-  border-style: none;
-  margin-left: 1rem;
+  border: none;
+  outline: none;
   padding-left: 1rem;
 }
 
@@ -39,7 +45,7 @@ input {
 }
 
 .input-task {
-  border: 1px solid #dad7d0;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
@@ -47,57 +53,67 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem;
 }
 
 .fa-circle-plus {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 .to-do-list {
-  margin: auto;
-  width: 50%;
+  margin: 1rem;
 }
 
 .dynamic-Elements {
   display: flex;
-  gap: 50px;
-  padding-top: 10px;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
 }
 
 .dynamic-Elements > p {
   padding-top: 10px;
+  font-size: 1.2rem;
 }
 
 .clr-btn > button {
-  border-style: solid none;
+  border: none;
   cursor: pointer;
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  border-bottom: 0;
   height: 4rem;
-  font-size: 20px;
-  border-width: 1px;
+  font-size: 1.2rem;
   background-color: #0429fc;
-  box-shadow: inset 0 0 0 0;
-  transition: ease-out 0.3s;
-  color: rgb(255, 255, 255);
+  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
 .clr-btn > button:hover {
-  box-shadow: inset 1400px 0 0 0 #f00;
-  border: 1px solid #fff;
-  color: #fff;
+  background-color: #003eff;
 }
 
 .task-layout {
   border: none;
   font-size: 1.2rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .remove-task {
   width: 80px;
   height: 40px;
+  border: none;
+  background-color: #ff4747;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-task:hover {
+  background-color: #e53a3a;
 }
